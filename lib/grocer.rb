@@ -11,7 +11,6 @@ def find_item_by_name_in_collection(name, collection)
   
 end
 
-# sharks.find {|item| item.include?("a")}
 
 def consolidate_cart(cart)
   # Consult README for inputs and outputs
