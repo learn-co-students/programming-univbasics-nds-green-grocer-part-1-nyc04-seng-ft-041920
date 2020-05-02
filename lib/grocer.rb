@@ -10,20 +10,21 @@ end
 def consolidate_cart(arr)
 cart = [];
 # arr2 = [];
-quantity = {}
+count = 0 
+current_quant = 0 
 arr.each do |val|
-  quantity[val[:item]] ||= {};
-  if quantity[val[:item]] == 1
-  quantity[val[:item]] += 1;
-  else 
-    quantity[val[:item]] = 1
+  item = val
+  item[:count] = 0 
+  cart << item 
+end 
+cart.uniq!
+cart.each do |i|
+  arr.each do |item|
+  if (i[:item] == item[:item])
+    i[:count] +=1
   end
 end
-arr.each_with_index do |val, i|
-  val[:count] = quantity[val[:item]]
-  cart << val
 end
-cart.uniq
+cart
 end
 
-  
